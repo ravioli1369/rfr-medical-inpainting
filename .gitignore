@@ -1,0 +1,9 @@
+ravi/data/covid-chestxray-dataset/images/
+ravi/data/covid-chestxray-dataset/resized/
+ravi/data/SARS-COV-2-Ct-Scan-Dataset/images/
+ravi/data/SARS-COV-2-Ct-Scan-Dataset/resized/
+__pycache__/
+*00.pth
+*final.pth
+*.npy
+.vscode/settings.json

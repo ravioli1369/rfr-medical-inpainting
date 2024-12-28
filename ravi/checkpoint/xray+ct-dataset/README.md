@@ -1,0 +1,1 @@
+1 mask with 1 hole per image, 750 images

@@ -1,0 +1,50 @@
+
+Here are the basic commands to train and test various experiments. The data can be downloaded from kaggle and 
+can use make_images.ipynb to convert data to npy files of appropriate size. Masks can be made with make_masks.py.
+
+For testing, the exact model that will be used for the testing should be changed from within run.py
+
+first run:
+
+
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small.npy --gpu 5 --mask_mode 0 --target_size 256
+
+
+
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small.npy --gpu 6 --mask_mode 0 --target_size 256 --test --model_path checkpoint/g_200.pth
+
+
+
+
+Train size:
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_12.npy --gpu 5 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_12
+
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_10.npy --gpu 6 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_10
+
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_8.npy --gpu 7 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_8
+
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_6.npy --gpu 4 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_6
+
+
+
+finetune size:
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_12.npy --gpu 5 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_12 --model_path checkpoint_size_12/g_12000.pth --finetune
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_10.npy --gpu 6 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_10 --model_path checkpoint_size_10/g_12000.pth --finetune
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_8.npy --gpu 7 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_8 --model_path checkpoint_size_8/g_10000.pth --finetune
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_6.npy --gpu 4 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_6 --model_path checkpoint_size_6/g_10000.pth --finetune
+
+test size:
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_12.npy --gpu 5 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_12 --model_path checkpoint_size_12/g_f_11000.pth --result_save_path checkpoint_size_12 --test
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_10.npy --gpu 5 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_10 --model_path checkpoint_size_10/g_f_11000.pth --result_save_path checkpoint_size_10 --test
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_8.npy --gpu 5 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_8 --model_path checkpoint_size_8/g_f_11000.pth --result_save_path checkpoint_size_8 --test
+python3 run.py --data_root ../testing/train_images_small.npy --mask_root ../testing/mask_file_small_6.npy --gpu 5 --mask_mode 0 --target_size 256 --model_save_path checkpoint_size_6 --model_path checkpoint_size_6/g_f_11000.pth --result_save_path checkpoint_size_6 --test
+
+
+mix train runs:
+
+python3 run.py --data_root ../testing/train_images_small_mix.npy --mask_root ../testing/mask_file_small_8.npy --gpu 4 --mask_mode 0 --target_size 256 --model_save_path checkpoint_mix
+
+
+
+
+

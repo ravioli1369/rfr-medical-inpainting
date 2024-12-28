@@ -1,0 +1,1 @@
+Data taken from the COVID-19 image data collection repository https://github.com/ieee8023/covid-chestxray-dataset
